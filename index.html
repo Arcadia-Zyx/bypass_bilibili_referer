@@ -11,7 +11,7 @@
     let reg = new RegExp("(^|&)" + "url" + "=([^&]*)(&|$)", "i");
     let target = window.location.search.substr(1).match(reg);
     if (target != null) {
-        window.location.replace(decodeURIComponent(target[0]));
+        window.location.replace(decodeURIComponent(target[2]));
     } else {
         window.location.replace("about:blank");
     }
