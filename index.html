@@ -11,7 +11,10 @@
     let reg = new RegExp("(^|&)" + "url" + "=([^&]*)(&|$)", "i");
     let target = window.location.search.substr(1).match(reg);
     if (target != null) {
-        window.location.replace(decodeURIComponent(target[2]));
+        let e=document.createElement("a");
+        e.href=decodeURIComponent(target[2]);
+        e.rel="noreferrer noopener";
+        e.click()
     } else {
         window.location.replace("about:blank");
     }
